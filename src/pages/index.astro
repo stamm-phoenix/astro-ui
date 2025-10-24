@@ -4,6 +4,7 @@ import MyButton from '../components/MyButton';
 import MyCard from '../components/MyCard';
 import MyBadge from '../components/MyBadge';
 import MyNavbar from '../components/MyNavbar';
+import MyDialog from '../components/MyDialog';
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -11,6 +12,7 @@ const navItems = [
     { label: "Button", href: "/components/button" },
     { label: "Card", href: "/components/card" },
     { label: "Badge", href: "/components/badge" },
+    { label: "Dialog", href: "/components/dialog" },
   ]},
   { label: "About", href: "/about" },
 ];
@@ -24,6 +26,7 @@ const navItems = [
 			<MyButton client:load text="Click Me" onClick={() => alert('Button clicked!')} />
 			<MyCard client:load title="My Card Title" description="This is a description for my card." content="Here is some content for the card." footer="Card Footer" />
 			<MyBadge client:load text="New Feature" variant="default" />
+			<MyDialog client:load triggerText="Open Dialog" title="Dialog Title" description="This is a dialog description." content="This is the content of the dialog." />
 		</div>
 	</main>
 </Layout>

@@ -5,3 +5,4 @@ export * from './ui/badge';
 export * from './ui/menubar';
 export * from './MyNavbar';
 export * from './ui/dialog';
+export * from './MyDialog';
