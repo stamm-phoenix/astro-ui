@@ -31,6 +31,7 @@
         buildInputs = with pkgs; [
           nodejs_22
           nodePackages.pnpm
+          nodePackages.npm
         ];
 
         installPhase = ''
