@@ -14,31 +14,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Install Nix
+        uses: cachix/install-nix-action@v22
         with:
-          node-version: 20
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Install pnpm
-        run: npm install -g pnpm
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build library
-        run: pnpm run build:lib
-
-      - name: Configure Git user
+          nix_path: nixpkgs=channel:nixos-unstable
+      - name: Run publish script
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Bump version and publish
-        run: |
-          pnpm version patch
-          pnpm publish --no-git-checks
-
+          nix shell --run "
+            npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+            pnpm version patch
+            pnpm publish --no-git-checks
+          "
       - name: Push changes
         run: |
           git push
