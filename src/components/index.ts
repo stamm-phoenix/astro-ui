@@ -23,3 +23,4 @@ export * from './MySwitch';
 export * from './ui/slider';
 export * from './MySlider';
 export * from './ui/table';
+export * from './MyTable';

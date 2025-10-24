@@ -12,6 +12,7 @@ import MySelect from '../components/MySelect';
 import MyTextarea from '../components/MyTextarea';
 import MySwitch from '../components/MySwitch';
 import MySlider from '../components/MySlider';
+import MyTable from '../components/MyTable';
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -27,6 +28,7 @@ const navItems = [
     { label: "Textarea", href: "/components/textarea" },
     { label: "Switch", href: "/components/switch" },
     { label: "Slider", href: "/components/slider" },
+    { label: "Table", href: "/components/table" },
   ]},
   { label: "About", href: "/about" },
 ];
@@ -41,6 +43,13 @@ const selectOptions = [
   { value: "apple", label: "Apple" },
   { value: "banana", label: "Banana" },
   { value: "grape", label: "Grape" },
+];
+
+const tableHeaders = ["Name", "Age", "City"];
+const tableData = [
+  ["John Doe", "30", "New York"],
+  ["Jane Smith", "25", "London"],
+  ["Peter Jones", "35", "Paris"],
 ];
 ---
 
@@ -60,6 +69,7 @@ const selectOptions = [
 			<MyTextarea client:load label="Your Message" placeholder="Type your message here." />
 			<MySwitch client:load id="airplane-mode" label="Airplane Mode" />
 			<MySlider client:load label="Volume" defaultValue={[50]} max={100} step={1} />
+			<MyTable client:load caption="User Data" headers={tableHeaders} data={tableData} />
 		</div>
 	</main>
 </Layout>
