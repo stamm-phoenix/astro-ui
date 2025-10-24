@@ -12,3 +12,4 @@ export * from './ui/input';
 export * from './MyInput';
 export * from './ui/checkbox';
 export * from './MyCheckbox';
+export * from './ui/radio-group';
