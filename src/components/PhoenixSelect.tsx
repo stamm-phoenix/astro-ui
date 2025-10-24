@@ -9,7 +9,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
-interface MySelectProps {
+interface PhoenixSelectProps {
   label?: string;
   placeholder?: string;
   options: { value: string; label: string }[];
@@ -17,7 +17,7 @@ interface MySelectProps {
   onValueChange?: (value: string) => void;
 }
 
-const MySelect: React.FC<MySelectProps> = ({ label, placeholder, options, defaultValue, onValueChange }) => {
+const PhoenixSelect: React.FC<PhoenixSelectProps> = ({ label, placeholder, options, defaultValue, onValueChange }) => {
   return (
     <div className="grid w-full max-w-sm items-center gap-1.5">
       {label && <label className="text-sm font-medium leading-none">{label}</label>}
@@ -39,4 +39,4 @@ const MySelect: React.FC<MySelectProps> = ({ label, placeholder, options, defaul
   );
 };
 
-export default MySelect;
+export default PhoenixSelect;

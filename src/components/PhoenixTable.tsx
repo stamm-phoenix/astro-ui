@@ -9,13 +9,13 @@ import {
   TableCaption,
 } from '@/components/ui/table';
 
-interface MyTableProps {
+interface PhoenixTableProps {
   caption?: string;
   headers: string[];
   data: string[][];
 }
 
-const MyTable: React.FC<MyTableProps> = ({ caption, headers, data }) => {
+const PhoenixTable: React.FC<PhoenixTableProps> = ({ caption, headers, data }) => {
   return (
     <Table>
       {caption && <TableCaption>{caption}</TableCaption>}
@@ -39,4 +39,4 @@ const MyTable: React.FC<MyTableProps> = ({ caption, headers, data }) => {
   );
 };
 
-export default MyTable;
+export default PhoenixTable;

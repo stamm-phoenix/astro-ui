@@ -4,14 +4,14 @@ import {
   RadioGroupItem,
 } from '@/components/ui/radio-group';
 
-interface MyRadioGroupProps {
+interface PhoenixRadioGroupProps {
   label: string;
   options: { value: string; label: string }[];
   defaultValue?: string;
   onValueChange?: (value: string) => void;
 }
 
-const MyRadioGroup: React.FC<MyRadioGroupProps> = ({ label, options, defaultValue, onValueChange }) => {
+const PhoenixRadioGroup: React.FC<PhoenixRadioGroupProps> = ({ label, options, defaultValue, onValueChange }) => {
   return (
     <div className="grid gap-2">
       <label className="text-sm font-medium leading-none">{label}</label>
@@ -27,4 +27,4 @@ const MyRadioGroup: React.FC<MyRadioGroupProps> = ({ label, options, defaultValu
   );
 };
 
-export default MyRadioGroup;
+export default PhoenixRadioGroup;

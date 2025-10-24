@@ -1,18 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import MyButton from '../components/MyButton';
-import MyCard from '../components/MyCard';
-import MyBadge from '../components/MyBadge';
-import MyNavbar from '../components/MyNavbar';
-import MyDialog from '../components/MyDialog';
-import MyInput from '../components/MyInput';
-import MyCheckbox from '../components/MyCheckbox';
-import MyRadioGroup from '../components/MyRadioGroup';
-import MySelect from '../components/MySelect';
-import MyTextarea from '../components/MyTextarea';
-import MySwitch from '../components/MySwitch';
-import MySlider from '../components/MySlider';
-import MyTable from '../components/MyTable';
+import { PhoenixButton } from '../components/PhoenixButton';
+import { PhoenixCard } from '../components/PhoenixCard';
+import { PhoenixBadge } from '../components/PhoenixBadge';
+import { PhoenixNavbar } from '../components/PhoenixNavbar';
+import { PhoenixDialog } from '../components/PhoenixDialog';
+import { PhoenixInput } from '../components/PhoenixInput';
+import { PhoenixCheckbox } from '../components/PhoenixCheckbox';
+import { PhoenixRadioGroup } from '../components/PhoenixRadioGroup';
+import { PhoenixSelect } from '../components/PhoenixSelect';
+import { PhoenixTextarea } from '../components/PhoenixTextarea';
+import { PhoenixSwitch } from '../components/PhoenixSwitch';
+import { PhoenixSlider } from '../components/PhoenixSlider';
+import { PhoenixTable } from '../components/PhoenixTable';
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -54,22 +54,22 @@ const tableData = [
 ---
 
 <Layout title="Welcome to Astro.">
-	<MyNavbar client:load items={navItems} />
+	<PhoenixNavbar client:load items={navItems} />
 	<main class="p-4">
 		<h1 class="text-4xl font-bold mb-4"><span class="text-gradient">Astro</span></h1>
 		<div class="flex flex-col gap-4">
-			<MyButton client:load text="Click Me" onClick={() => alert('Button clicked!')} />
-			<MyCard client:load title="My Card Title" description="This is a description for my card." content="Here is some content for the card." footer="Card Footer" />
-			<MyBadge client:load text="New Feature" variant="default" />
-			<MyDialog client:load triggerText="Open Dialog" title="Dialog Title" description="This is a dialog description." content="This is the content of the dialog." />
-			<MyInput client:load label="Your Name" placeholder="Enter your name" />
-			<MyCheckbox client:load id="terms" label="Accept terms and conditions" />
-			<MyRadioGroup client:load label="Select an option" options={radioOptions} defaultValue="option1" />
-			<MySelect client:load label="Favorite Fruit" placeholder="Select a fruit" options={selectOptions} />
-			<MyTextarea client:load label="Your Message" placeholder="Type your message here." />
-			<MySwitch client:load id="airplane-mode" label="Airplane Mode" />
-			<MySlider client:load label="Volume" defaultValue={[50]} max={100} step={1} />
-			<MyTable client:load caption="User Data" headers={tableHeaders} data={tableData} />
+			<PhoenixButton client:load text="Click Me" onClick={() => alert('Button clicked!')} />
+			<PhoenixCard client:load title="My Card Title" description="This is a description for my card." content="Here is some content for the card." footer="Card Footer" />
+			<PhoenixBadge client:load text="New Feature" variant="default" />
+			<PhoenixDialog client:load triggerText="Open Dialog" title="Dialog Title" description="This is a dialog description." content="This is the content of the dialog." />
+			<PhoenixInput client:load label="Your Name" placeholder="Enter your name" />
+			<PhoenixCheckbox client:load id="terms" label="Accept terms and conditions" />
+			<PhoenixRadioGroup client:load label="Select an option" options={radioOptions} defaultValue="option1" />
+			<PhoenixSelect client:load label="Favorite Fruit" placeholder="Select a fruit" options={selectOptions} />
+			<PhoenixTextarea client:load label="Your Message" placeholder="Type your message here." />
+			<PhoenixSwitch client:load id="airplane-mode" label="Airplane Mode" />
+			<PhoenixSlider client:load label="Volume" defaultValue={[50]} max={100} step={1} />
+			<PhoenixTable client:load caption="User Data" headers={tableHeaders} data={tableData} />
 		</div>
 	</main>
 </Layout>

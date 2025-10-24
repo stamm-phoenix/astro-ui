@@ -1,7 +1,7 @@
 import React from 'react';
 import { Slider } from '@/components/ui/slider';
 
-interface MySliderProps {
+interface PhoenixSliderProps {
   label: string;
   defaultValue?: number[];
   max?: number;
@@ -10,7 +10,7 @@ interface MySliderProps {
   onValueChange?: (value: number[]) => void;
 }
 
-const MySlider: React.FC<MySliderProps> = ({ label, defaultValue, max, min, step, onValueChange }) => {
+const PhoenixSlider: React.FC<PhoenixSliderProps> = ({ label, defaultValue, max, min, step, onValueChange }) => {
   return (
     <div className="grid w-full max-w-sm items-center gap-1.5">
       {label && <label className="text-sm font-medium leading-none">{label}</label>}
@@ -26,4 +26,4 @@ const MySlider: React.FC<MySliderProps> = ({ label, defaultValue, max, min, step
   );
 };
 
-export default MySlider;
+export default PhoenixSlider;

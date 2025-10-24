@@ -1,14 +1,14 @@
 import React from 'react';
 import { Switch } from '@/components/ui/switch';
 
-interface MySwitchProps {
+interface PhoenixSwitchProps {
   label: string;
   id: string;
   checked?: boolean;
   onCheckedChange?: (checked: boolean) => void;
 }
 
-const MySwitch: React.FC<MySwitchProps> = ({ label, id, checked, onCheckedChange }) => {
+const PhoenixSwitch: React.FC<PhoenixSwitchProps> = ({ label, id, checked, onCheckedChange }) => {
   return (
     <div className="flex items-center space-x-2">
       <Switch id={id} checked={checked} onCheckedChange={onCheckedChange} />
@@ -22,4 +22,4 @@ const MySwitch: React.FC<MySwitchProps> = ({ label, id, checked, onCheckedChange
   );
 };
 
-export default MySwitch;
+export default PhoenixSwitch;

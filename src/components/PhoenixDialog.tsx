@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 
-interface MyDialogProps {
+interface PhoenixDialogProps {
   triggerText: string;
   title: string;
   description: string;
@@ -18,7 +18,7 @@ interface MyDialogProps {
   footer?: React.ReactNode;
 }
 
-const MyDialog: React.FC<MyDialogProps> = ({ triggerText, title, description, content, footer }) => {
+const PhoenixDialog: React.FC<PhoenixDialogProps> = ({ triggerText, title, description, content, footer }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -36,4 +36,4 @@ const MyDialog: React.FC<MyDialogProps> = ({ triggerText, title, description, co
   );
 };
 
-export default MyDialog;
+export default PhoenixDialog;

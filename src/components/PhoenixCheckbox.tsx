@@ -1,14 +1,14 @@
 import React from 'react';
 import { Checkbox } from '@/components/ui/checkbox';
 
-interface MyCheckboxProps {
+interface PhoenixCheckboxProps {
   label: string;
   id: string;
   checked?: boolean;
   onCheckedChange?: (checked: boolean) => void;
 }
 
-const MyCheckbox: React.FC<MyCheckboxProps> = ({ label, id, checked, onCheckedChange }) => {
+const PhoenixCheckbox: React.FC<PhoenixCheckboxProps> = ({ label, id, checked, onCheckedChange }) => {
   return (
     <div className="flex items-center space-x-2">
       <Checkbox id={id} checked={checked} onCheckedChange={onCheckedChange} />
@@ -22,4 +22,4 @@ const MyCheckbox: React.FC<MyCheckboxProps> = ({ label, id, checked, onCheckedCh
   );
 };
 
-export default MyCheckbox;
+export default PhoenixCheckbox;
