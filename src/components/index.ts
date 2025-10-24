@@ -14,3 +14,4 @@ export * from './ui/checkbox';
 export * from './MyCheckbox';
 export * from './ui/radio-group';
 export * from './MyRadioGroup';
+export * from './ui/select';
