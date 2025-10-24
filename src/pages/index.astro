@@ -11,6 +11,7 @@ import MyRadioGroup from '../components/MyRadioGroup';
 import MySelect from '../components/MySelect';
 import MyTextarea from '../components/MyTextarea';
 import MySwitch from '../components/MySwitch';
+import MySlider from '../components/MySlider';
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -25,6 +26,7 @@ const navItems = [
     { label: "Select", href: "/components/select" },
     { label: "Textarea", href: "/components/textarea" },
     { label: "Switch", href: "/components/switch" },
+    { label: "Slider", href: "/components/slider" },
   ]},
   { label: "About", href: "/about" },
 ];
@@ -57,6 +59,7 @@ const selectOptions = [
 			<MySelect client:load label="Favorite Fruit" placeholder="Select a fruit" options={selectOptions} />
 			<MyTextarea client:load label="Your Message" placeholder="Type your message here." />
 			<MySwitch client:load id="airplane-mode" label="Airplane Mode" />
+			<MySlider client:load label="Volume" defaultValue={[50]} max={100} step={1} />
 		</div>
 	</main>
 </Layout>
