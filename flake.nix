@@ -21,27 +21,29 @@
       ];
     };
 
-    packages.${system}.astro-ui = pkgs.stdenv.mkDerivation {
-      pname = "dpsg-phoenix-ui";
-      version = "0.0.1"; # This should ideally be read from package.json
+    packages.${system} = {
+      astro-ui = pkgs.stdenv.mkDerivation {
+        pname = "@stamm-phoenix/astro-ui";
+        version = "0.0.1"; # This should ideally be read from package.json
 
-      src = self;
+        src = self;
 
-      buildInputs = with pkgs; [
-        nodejs_22
-        nodePackages.pnpm
-      ];
+        buildInputs = with pkgs; [
+          nodejs_22
+          nodePackages.pnpm
+        ];
 
-      installPhase = ''
-        pnpm install --frozen-lockfile
-        pnpm run build:lib
-        mkdir -p $out
-        cp -r dist $out/
-        cp -r package.json $out/
-        cp -r README.md $out/
-        cp -r LICENSE $out/
-      '';
+        installPhase = ''
+          pnpm install --frozen-lockfile
+          pnpm run build:lib
+          mkdir -p $out
+          cp -r dist $out/
+          cp -r package.json $out/
+          cp -r README.md $out/
+          cp -r LICENSE $out/
+        '';
+      };
+      default = self.packages.${system}.astro-ui;
     };
   };
 }
-
