@@ -18,7 +18,12 @@
       buildInputs = with pkgs; [
         nodejs_22
         nodePackages.pnpm
+        nodePackages.npm
+        bash
       ];
+      shellHook = ''
+        ${pkgs.bash}/bin/bash
+      '';
     };
 
     packages.${system} = {
@@ -31,7 +36,6 @@
         buildInputs = with pkgs; [
           nodejs_22
           nodePackages.pnpm
-          nodePackages.npm
         ];
 
         installPhase = ''
