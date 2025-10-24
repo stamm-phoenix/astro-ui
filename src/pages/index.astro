@@ -1,11 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import MyButton from '../components/MyButton';
+import MyCard from '../components/MyCard';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<h1><span class="text-gradient">Astro</span></h1>
-		<MyButton client:load text="Click Me" onClick={() => alert('Button clicked!')} />
+	<main class="p-4">
+		<h1 class="text-4xl font-bold mb-4"><span class="text-gradient">Astro</span></h1>
+		<div class="flex flex-col gap-4">
+			<MyButton client:load text="Click Me" onClick={() => alert('Button clicked!')} />
+			<MyCard client:load title="My Card Title" description="This is a description for my card." content="Here is some content for the card." footer="Card Footer" />
+		</div>
 	</main>
 </Layout>
