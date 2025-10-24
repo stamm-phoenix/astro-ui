@@ -4,3 +4,4 @@ export * from './ui/card';
 export * from './ui/badge';
 export * from './ui/menubar';
 export * from './MyNavbar';
+export * from './ui/dialog';
