@@ -5,6 +5,7 @@ import MyCard from '../components/MyCard';
 import MyBadge from '../components/MyBadge';
 import MyNavbar from '../components/MyNavbar';
 import MyDialog from '../components/MyDialog';
+import MyInput from '../components/MyInput';
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -13,6 +14,7 @@ const navItems = [
     { label: "Card", href: "/components/card" },
     { label: "Badge", href: "/components/badge" },
     { label: "Dialog", href: "/components/dialog" },
+    { label: "Input", href: "/components/input" },
   ]},
   { label: "About", href: "/about" },
 ];
@@ -27,6 +29,7 @@ const navItems = [
 			<MyCard client:load title="My Card Title" description="This is a description for my card." content="Here is some content for the card." footer="Card Footer" />
 			<MyBadge client:load text="New Feature" variant="default" />
 			<MyDialog client:load triggerText="Open Dialog" title="Dialog Title" description="This is a dialog description." content="This is the content of the dialog." />
+			<MyInput client:load label="Your Name" placeholder="Enter your name" />
 		</div>
 	</main>
 </Layout>
