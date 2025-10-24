@@ -6,6 +6,7 @@ import MyBadge from '../components/MyBadge';
 import MyNavbar from '../components/MyNavbar';
 import MyDialog from '../components/MyDialog';
 import MyInput from '../components/MyInput';
+import MyCheckbox from '../components/MyCheckbox';
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -15,6 +16,7 @@ const navItems = [
     { label: "Badge", href: "/components/badge" },
     { label: "Dialog", href: "/components/dialog" },
     { label: "Input", href: "/components/input" },
+    { label: "Checkbox", href: "/components/checkbox" },
   ]},
   { label: "About", href: "/about" },
 ];
@@ -30,6 +32,7 @@ const navItems = [
 			<MyBadge client:load text="New Feature" variant="default" />
 			<MyDialog client:load triggerText="Open Dialog" title="Dialog Title" description="This is a dialog description." content="This is the content of the dialog." />
 			<MyInput client:load label="Your Name" placeholder="Enter your name" />
+			<MyCheckbox client:load id="terms" label="Accept terms and conditions" />
 		</div>
 	</main>
 </Layout>

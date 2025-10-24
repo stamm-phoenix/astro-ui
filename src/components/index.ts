@@ -11,3 +11,4 @@ export * from './MyDialog';
 export * from './ui/input';
 export * from './MyInput';
 export * from './ui/checkbox';
+export * from './MyCheckbox';
