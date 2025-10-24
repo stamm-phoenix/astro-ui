@@ -10,3 +10,4 @@ export * from './ui/dialog';
 export * from './MyDialog';
 export * from './ui/input';
 export * from './MyInput';
+export * from './ui/checkbox';
