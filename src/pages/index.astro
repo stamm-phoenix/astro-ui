@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import MyButton from '../components/MyButton';
 import MyCard from '../components/MyCard';
+import MyBadge from '../components/MyBadge';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -10,6 +11,7 @@ import MyCard from '../components/MyCard';
 		<div class="flex flex-col gap-4">
 			<MyButton client:load text="Click Me" onClick={() => alert('Button clicked!')} />
 			<MyCard client:load title="My Card Title" description="This is a description for my card." content="Here is some content for the card." footer="Card Footer" />
+			<MyBadge client:load text="New Feature" variant="default" />
 		</div>
 	</main>
 </Layout>
