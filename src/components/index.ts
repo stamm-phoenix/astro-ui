@@ -17,3 +17,4 @@ export * from './MyRadioGroup';
 export * from './ui/select';
 export * from './MySelect';
 export * from './ui/textarea';
+export * from './MyTextarea';
