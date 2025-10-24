@@ -20,7 +20,7 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
       - name: Run publish script
         run: |
-          nix shell --run "
+          nix shell .# -c "
             npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
             pnpm version patch
             pnpm publish --no-git-checks
