@@ -9,13 +9,13 @@ import {
   TableCaption,
 } from '@/components/ui/table';
 
-interface PhoenixTableProps {
+interface DPSGTableProps {
   caption?: string;
   headers: string[];
   data: string[][];
 }
 
-const PhoenixTable: React.FC<PhoenixTableProps> = ({ caption, headers, data }) => {
+const DPSGTable: React.FC<DPSGTableProps> = ({ caption, headers, data }) => {
   return (
     <Table>
       {caption && <TableCaption>{caption}</TableCaption>}
@@ -39,4 +39,4 @@ const PhoenixTable: React.FC<PhoenixTableProps> = ({ caption, headers, data }) =
   );
 };
 
-export default PhoenixTable;
+export default DPSGTable;

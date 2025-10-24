@@ -1,12 +1,12 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 
-interface PhoenixButtonProps {
+interface DPSGButtonProps {
   text: string;
   onClick?: () => void;
 }
 
-const PhoenixButton: React.FC<PhoenixButtonProps> = ({ text, onClick }) => {
+const DPSGButton: React.FC<DPSGButtonProps> = ({ text, onClick }) => {
   return (
     <Button onClick={onClick}>
       {text}
@@ -14,4 +14,4 @@ const PhoenixButton: React.FC<PhoenixButtonProps> = ({ text, onClick }) => {
   );
 };
 
-export default PhoenixButton;
+export default DPSGButton;

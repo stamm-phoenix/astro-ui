@@ -8,11 +8,11 @@ import {
   MenubarSeparator,
 } from '@/components/ui/menubar';
 
-interface PhoenixNavbarProps {
+interface DPSGNavbarProps {
   items: { label: string; href: string; subItems?: { label: string; href: string }[] }[];
 }
 
-const PhoenixNavbar: React.FC<PhoenixNavbarProps> = ({ items }) => {
+const DPSGNavbar: React.FC<DPSGNavbarProps> = ({ items }) => {
   return (
     <Menubar>
       {items.map((item, index) => (
@@ -33,4 +33,4 @@ const PhoenixNavbar: React.FC<PhoenixNavbarProps> = ({ items }) => {
   );
 };
 
-export default PhoenixNavbar;
+export default DPSGNavbar;

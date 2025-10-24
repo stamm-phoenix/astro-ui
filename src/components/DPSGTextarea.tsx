@@ -1,17 +1,17 @@
 import React from 'react';
-import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 
-interface PhoenixInputProps extends React.ComponentProps<typeof Input> {
+interface DPSGTextareaProps extends React.ComponentProps<typeof Textarea> {
   label?: string;
 }
 
-const PhoenixInput: React.FC<PhoenixInputProps> = ({ label, id, ...props }) => {
+const DPSGTextarea: React.FC<DPSGTextareaProps> = ({ label, id, ...props }) => {
   return (
     <div className="grid w-full max-w-sm items-center gap-1.5">
       {label && <label htmlFor={id} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">{label}</label>}
-      <Input id={id} {...props} />
+      <Textarea id={id} {...props} />
     </div>
   );
 };
 
-export default PhoenixInput;
+export default DPSGTextarea;

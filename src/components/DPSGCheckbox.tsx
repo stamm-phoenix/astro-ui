@@ -1,17 +1,17 @@
 import React from 'react';
-import { Switch } from '@/components/ui/switch';
+import { Checkbox } from '@/components/ui/checkbox';
 
-interface PhoenixSwitchProps {
+interface DPSGCheckboxProps {
   label: string;
   id: string;
   checked?: boolean;
   onCheckedChange?: (checked: boolean) => void;
 }
 
-const PhoenixSwitch: React.FC<PhoenixSwitchProps> = ({ label, id, checked, onCheckedChange }) => {
+const DPSGCheckbox: React.FC<DPSGCheckboxProps> = ({ label, id, checked, onCheckedChange }) => {
   return (
     <div className="flex items-center space-x-2">
-      <Switch id={id} checked={checked} onCheckedChange={onCheckedChange} />
+      <Checkbox id={id} checked={checked} onCheckedChange={onCheckedChange} />
       <label
         htmlFor={id}
         className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -22,4 +22,4 @@ const PhoenixSwitch: React.FC<PhoenixSwitchProps> = ({ label, id, checked, onChe
   );
 };
 
-export default PhoenixSwitch;
+export default DPSGCheckbox;

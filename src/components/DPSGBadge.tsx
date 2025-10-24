@@ -1,12 +1,12 @@
 import React from 'react';
 import { Badge } from '@/components/ui/badge';
 
-interface PhoenixBadgeProps {
+interface DPSGBadgeProps {
   text: string;
   variant?: "default" | "secondary" | "destructive" | "outline";
 }
 
-const PhoenixBadge: React.FC<PhoenixBadgeProps> = ({ text, variant }) => {
+const DPSGBadge: React.FC<DPSGBadgeProps> = ({ text, variant }) => {
   return (
     <Badge variant={variant}>
       {text}
@@ -14,4 +14,4 @@ const PhoenixBadge: React.FC<PhoenixBadgeProps> = ({ text, variant }) => {
   );
 };
 
-export default PhoenixBadge;
+export default DPSGBadge;

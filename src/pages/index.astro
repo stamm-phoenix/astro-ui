@@ -1,18 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { PhoenixButton } from '../components/PhoenixButton';
-import { PhoenixCard } from '../components/PhoenixCard';
-import { PhoenixBadge } from '../components/PhoenixBadge';
-import { PhoenixNavbar } from '../components/PhoenixNavbar';
-import { PhoenixDialog } from '../components/PhoenixDialog';
-import { PhoenixInput } from '../components/PhoenixInput';
-import { PhoenixCheckbox } from '../components/PhoenixCheckbox';
-import { PhoenixRadioGroup } from '../components/PhoenixRadioGroup';
-import { PhoenixSelect } from '../components/PhoenixSelect';
-import { PhoenixTextarea } from '../components/PhoenixTextarea';
-import { PhoenixSwitch } from '../components/PhoenixSwitch';
-import { PhoenixSlider } from '../components/PhoenixSlider';
-import { PhoenixTable } from '../components/PhoenixTable';
+import { DPSGButton } from '../components/DPSGButton';
+import { DPSGCard } from '../components/DPSGCard';
+import { DPSGBadge } from '../components/DPSGBadge';
+import { DPSGNavbar } from '../components/DPSGNavbar';
+import { DPSGDialog } from '../components/DPSGDialog';
+import { DPSGInput } from '../components/DPSGInput';
+import { DPSGCheckbox } from '../components/DPSGCheckbox';
+import { DPSGRadioGroup } from '../components/DPSGRadioGroup';
+import { DPSGSelect } from '../components/DPSGSelect';
+import { DPSGTextarea } from '../components/DPSGTextarea';
+import { DPSGSwith } from '../components/DPSGSwith';
+import { DPSGSilder } from '../components/DPSGSilder';
+import { DPSGTable } from '../components/DPSGTable';
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -54,22 +54,22 @@ const tableData = [
 ---
 
 <Layout title="Welcome to Astro.">
-	<PhoenixNavbar client:load items={navItems} />
+	<DPSGNavbar client:load items={navItems} />
 	<main class="p-4">
 		<h1 class="text-4xl font-bold mb-4"><span class="text-gradient">Astro</span></h1>
 		<div class="flex flex-col gap-4">
-			<PhoenixButton client:load text="Click Me" onClick={() => alert('Button clicked!')} />
-			<PhoenixCard client:load title="My Card Title" description="This is a description for my card." content="Here is some content for the card." footer="Card Footer" />
-			<PhoenixBadge client:load text="New Feature" variant="default" />
-			<PhoenixDialog client:load triggerText="Open Dialog" title="Dialog Title" description="This is a dialog description." content="This is the content of the dialog." />
-			<PhoenixInput client:load label="Your Name" placeholder="Enter your name" />
-			<PhoenixCheckbox client:load id="terms" label="Accept terms and conditions" />
-			<PhoenixRadioGroup client:load label="Select an option" options={radioOptions} defaultValue="option1" />
-			<PhoenixSelect client:load label="Favorite Fruit" placeholder="Select a fruit" options={selectOptions} />
-			<PhoenixTextarea client:load label="Your Message" placeholder="Type your message here." />
-			<PhoenixSwitch client:load id="airplane-mode" label="Airplane Mode" />
-			<PhoenixSlider client:load label="Volume" defaultValue={[50]} max={100} step={1} />
-			<PhoenixTable client:load caption="User Data" headers={tableHeaders} data={tableData} />
+			<DPSGButton client:load text="Click Me" onClick={() => alert('Button clicked!')} />
+			<DPSGCard client:load title="My Card Title" description="This is a description for my card." content="Here is some content for the card." footer="Card Footer" />
+			<DPSGBadge client:load text="New Feature" variant="default" />
+			<DPSGDialog client:load triggerText="Open Dialog" title="Dialog Title" description="This is a dialog description." content="This is the content of the dialog." />
+			<DPSGInput client:load label="Your Name" placeholder="Enter your name" />
+			<DPSGCheckbox client:load id="terms" label="Accept terms and conditions" />
+			<DPSGRadioGroup client:load label="Select an option" options={radioOptions} defaultValue="option1" />
+			<DPSGSelect client:load label="Favorite Fruit" placeholder="Select a fruit" options={selectOptions} />
+			<DPSGTextarea client:load label="Your Message" placeholder="Type your message here." />
+			<DPSGSwith client:load id="airplane-mode" label="Airplane Mode" />
+			<DPSGSilder client:load label="Volume" defaultValue={[50]} max={100} step={1} />
+			<DPSGTable client:load caption="User Data" headers={tableHeaders} data={tableData} />
 		</div>
 	</main>
 </Layout>

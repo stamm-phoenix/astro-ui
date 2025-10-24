@@ -1,14 +1,14 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 
-interface PhoenixCardProps {
+interface DPSGCardProps {
   title: string;
   description: string;
   content?: React.ReactNode;
   footer?: React.ReactNode;
 }
 
-const PhoenixCard: React.FC<PhoenixCardProps> = ({ title, description, content, footer }) => {
+const DPSGCard: React.FC<DPSGCardProps> = ({ title, description, content, footer }) => {
   return (
     <Card>
       <CardHeader>
@@ -21,4 +21,4 @@ const PhoenixCard: React.FC<PhoenixCardProps> = ({ title, description, content, 
   );
 };
 
-export default PhoenixCard;
+export default DPSGCard;
