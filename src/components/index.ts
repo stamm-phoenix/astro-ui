@@ -19,3 +19,4 @@ export * from './MySelect';
 export * from './ui/textarea';
 export * from './MyTextarea';
 export * from './ui/switch';
+export * from './MySwitch';

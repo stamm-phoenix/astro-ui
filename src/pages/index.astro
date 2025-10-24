@@ -10,6 +10,7 @@ import MyCheckbox from '../components/MyCheckbox';
 import MyRadioGroup from '../components/MyRadioGroup';
 import MySelect from '../components/MySelect';
 import MyTextarea from '../components/MyTextarea';
+import MySwitch from '../components/MySwitch';
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -23,6 +24,7 @@ const navItems = [
     { label: "Radio Group", href: "/components/radio-group" },
     { label: "Select", href: "/components/select" },
     { label: "Textarea", href: "/components/textarea" },
+    { label: "Switch", href: "/components/switch" },
   ]},
   { label: "About", href: "/about" },
 ];
@@ -54,6 +56,7 @@ const selectOptions = [
 			<MyRadioGroup client:load label="Select an option" options={radioOptions} defaultValue="option1" />
 			<MySelect client:load label="Favorite Fruit" placeholder="Select a fruit" options={selectOptions} />
 			<MyTextarea client:load label="Your Message" placeholder="Type your message here." />
+			<MySwitch client:load id="airplane-mode" label="Airplane Mode" />
 		</div>
 	</main>
 </Layout>
