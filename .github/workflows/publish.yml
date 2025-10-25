@@ -7,15 +7,11 @@ on:
 
 permissions:
   contents: write
+  packages: write
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
-      packages: write
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -25,36 +21,42 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixos-unstable
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          sandbox: false
 
-      - name: Build devShell and publish to npm
+      - name: Publish package from Nix devShell
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          nix develop --command bash -euxo pipefail -c "
-            # Configure npm auth
-            npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          # Run everything inside your flake devShell
+          nix develop --keep NPM_TOKEN --keep GITHUB_TOKEN --command bash -euxo pipefail -c "
+            echo '🔧 Setting up npm authentication...'
+            npm config set //registry.npmjs.org/:_authToken=\$NPM_TOKEN
 
-            # Install dependencies
+            echo '📦 Installing dependencies...'
             pnpm install
 
-            # Bump the version (patch, minor, or major as you prefer)
+            echo '⬆️  Bumping version...'
             pnpm version patch --no-git-tag-version
-
-            # Extract new version number (note: inner quotes are single)
             VERSION=\$(node -p 'require(\"./package.json\").version')
-            echo New version: \$VERSION
+            echo 'New version: '\$VERSION
 
-            # Commit and tag the bump
+            echo '🔍 Checking if version already exists on npm...'
+            if npm view \$(node -p 'require(\"./package.json\").name')@\${VERSION} > /dev/null 2>&1; then
+              echo '🚫 Version '\$VERSION' already exists on npm. Skipping publish.'
+              exit 0
+            fi
+
+            echo '🪣 Committing version bump...'
             git config user.name 'github-actions[bot]'
             git config user.email 'github-actions[bot]@users.noreply.github.com'
             git add package.json pnpm-lock.yaml || true
             git commit -m \"chore(release): v\$VERSION [skip ci]\" || true
-            git tag \"v\$VERSION\"
+            git tag v\$VERSION
 
-            # Publish to npm
+            echo '🚀 Publishing to npm...'
             pnpm publish --no-git-checks
 
-            # Push back to main with tags
+            echo '📤 Pushing commits and tags...'
             git push origin main --follow-tags
           "
